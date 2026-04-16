@@ -65,3 +65,59 @@ goat = Goat()
 
 print(dog)
 
+
+class Person:
+    """Model a person"""
+    def __init__(self, name, age, gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
+
+    def favorite_food(self,  food):
+        """Return the favorite food of the person"""
+        return f"{self.name}'s favorite food is {food}."
+    
+    def play_football(self, can_play):
+        """Return whether the person can play football or not"""
+        if can_play.lower() == 'yes':
+            return f"{self.name} can play football."
+        elif  can_play.lower() == 'no':          
+            return f"{self.name} cannot play football."
+        else: 
+            return "You can only enter yes or no"
+        
+
+peron_a = Person("Alice", 30, 'M')
+print(peron_a.favorite_food("pizza"))
+print(peron_a.play_football('Yes'))
+print(peron_a.play_football('No'))
+
+class Male(Person):
+    """Child class of Parent Person"""
+    def __init__(self, name, age, gender):
+        super().__init__(name, age, gender) # The super() function is used to call the __init__ method of the parent class (Person) to initialize the attributes of the
+    
+    def title(self):
+        """Return the title of the person"""
+        return f"Mr {self.name}"
+    
+male = Male("John", 25, 'M')
+print(male.title())
+print(male.favorite_food("burger"))
+
+class Female(Person):
+    """Child class of Parent Person"""
+    def __init__(self, name, age, gender):
+        super().__init__(name, age, gender) # The super() function is used to call the __init__ method of the parent class (Person) to initialize the attributes of the
+    
+    def title(self):
+        """Return the title of the person"""
+        return f"Mrs {self.name}"
+    
+female = Female("Jane", 28, 'F')
+print(female.title())
+print(female.favorite_food("salad"))
+
+# Polymorphism: Polymorphism is the ability of an object to take on many forms. In Python, we can achieve polymorphism through method overriding, which allows a subclass to provide a specific implementation of a method that is already defined in its superclass. This means
+people = [male, female]
+print(people[0])
