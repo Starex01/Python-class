@@ -95,7 +95,7 @@ print(peron_a.play_football('No'))
 class Male(Person):
     """Child class of Parent Person"""
     def __init__(self, name, age, gender):
-        super().__init__(name, age, gender) # The super() function is used to call the __init__ method of the parent class (Person) to initialize the attributes of the
+        super().__init__(name, age, gender) # The super() function is used to call the __init__ method of the parent class (Person) to initialize the attributes of the Male class.
     
     def title(self):
         """Return the title of the person"""
